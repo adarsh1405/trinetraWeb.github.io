@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Trinetra panel</title>
+
+    
+
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="./vendors/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="./vendors/chartist/chartist.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="./images/logo1.png" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+
+
+
+    <style>
+     
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #eee;
+      }
+      h1, h2 {
+      text-transform: uppercase;
+      font-weight: 400;
+      }
+      h2 {
+      margin: 0 0 0 8px;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5); 
+      }
+      .left-part, form {
+      padding: 25px;
+      }
+      .left-part {
+      text-align: center;
+      }
+      .fa-graduation-cap {
+      font-size: 72px;
+      }
+      form {
+      background: rgba(0, 0, 0, 0.7); 
+      }
+      .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info {
+      display: flex;
+      flex-direction: column;
+      }
+      input, select {
+      padding: 5px;
+      margin-bottom: 30px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      }
+      input::placeholder {
+      color: #eee;
+      }
+      option:focus {
+      border: none;
+      }
+      option {
+      background: black; 
+      border: none;
+      }
+      .checkbox input {
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+      }
+      .checkbox a {
+      color: #26a9e0;
+      }
+      .checkbox a:hover {
+      color: #85d6de;
+      }
+      .btn-item, button {
+      padding: 10px 5px;
+      margin-top: 20px;
+      border-radius: 5px; 
+      border: none;
+      background: #26a9e0; 
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      }
+      .btn-item {
+      display: inline-block;
+      margin: 20px 5px 0;
+      }
+      button {
+      width: 100%;
+      }
+      button:hover, .btn-item:hover {
+      background: #85d6de;
+      }
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+      .main-block {
+      flex-direction: row;
+      height: calc(100% - 50px);
+      }
+      .left-part, form {
+      flex: 1;
+      height: auto;
+      }
+      }
+      .pointer {cursor: pointer;}
+    </style>
+
+  </head>
+  <body>
+    <div class="container-scroller">
+     
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a href="#" class="nav-link">
+                <div class="profile-image">
+                  <img class="img-xs rounded-circle" src="images/faces-clipart/pic-1.png" alt="profile image">
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">Zack Synder</p>
+                  <p class="designation">Admin</p>
+                </div>
+              </a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <span class="menu-title">Dashboard</span>
+                <i class="icon-screen-desktop menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-category"><span class="nav-link">Operation</span></li>
+            <li class="nav-item">
+              <a class="nav-link" aria-expanded="false" aria-controls="ui-basic" data-toggle="collapse">
+                <p class="pointer">
+                <span class="menu-title" data-toggle="modal" data-target="#addmodal">Add User</span>
+                </p><i class="icon-layers menu-icon"></i>
+                
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" ><p class="pointer">
+                <span class="menu-title" data-toggle="modal" data-target="#deletemodal">Delete User</span></p>
+                <i class="icon-chart menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <p class="pointer">
+                <span class="menu-title" data-toggle="modal" data-target="#updatemodal">Update User</span></p>
+                <i class="icon-book-open menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://techspace-trinetra.herokuapp.com/admin/map">
+                <span class="menu-title">Edit Map</span>
+                <i class="icon-globe menu-icon"></i>
+              </a>
+            </li>
+            </li>
+          </ul>
+        </nav>
+
+
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">  
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-sm-flex align-items-center mb-4">
+                      <h4 class="card-title mb-sm-0">Database</h4>
+                    </div>
+                    <div class="table-responsive border rounded p-1">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="font-weight-bold">Name</th>
+                            <th class="font-weight-bold">Employee ID</th>
+                            
+                            <th class="font-weight-bold">Phone no.</th>
+                            <th class="font-weight-bold">Bunked</th>
+                            <th class="font-weight-bold">Attendance</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face1.jpg" alt="profile image"> Bruce Wayne
+                            </td>
+                            <td>1841012387</td>
+                            
+                            <td>9437100101</td>
+                            <td>07</td>
+                            <td>
+                              <div class="badge badge-success p-2">89.6%</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face2.jpg" alt="profile image"> Princess Diana
+                            </td>
+                            <td>1841012326</td>
+                            
+                            <td>9876543210</td>
+                            <td>18</td>
+                            <td>
+                              <div class="badge badge-danger p-2">49.5%</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face3.jpg" alt="profile image"> Clark Klent
+                            </td>
+                            <td>1841012387</td>
+                            
+                            <td>8895439756</td>
+                            <td>12</td>
+                            <td>
+                              <div class="badge badge-warning p-2">76.6%</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face4.jpg" alt="profile image"> Barry Allen
+                            </td>
+                            <td>1941015698</td>
+                            
+                            <td>6370548712</td>
+                            <td>01</td>
+                            <td>
+                              <div class="badge badge-success p-2">98.6%</div>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face1.jpg" alt="profile image"> Bruce Wayne
+                            </td>
+                            <td>1841012387</td>
+                            
+                            <td>9437205869</td>
+                            <td>07</td>
+                            <td>
+                              <div class="badge badge-success p-2">89.6%</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face2.jpg" alt="profile image"> Princess Diana
+                            </td>
+                            <td>1841012326</td>
+                            
+                            <td>9861564987</td>
+                            <td>18</td>
+                            <td>
+                              <div class="badge badge-danger p-2">49.5%</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face3.jpg" alt="profile image"> Clark Klent
+                            </td>
+                            <td>1841012387</td>
+                            
+                            <td>7004941998</td>
+                            <td>12</td>
+                            <td>
+                              <div class="badge badge-warning p-2">76.6%</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face4.jpg" alt="profile image"> Barry Allen
+                            </td>
+                            <td>1941015698</td>
+                            
+                            <td>9876626182</td>
+                            <td>01</td>
+                            <td>
+                              <div class="badge badge-success p-2">98.6%</div>
+                            </td>
+                          </tr>
+
+                          
+                        </tbody>
+                      </table>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AddModal  AREA-->
+ <div class="modal fade right" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+    <div class="modal-content">
+         <div class="main-block">
+      <form action="/">
+        <div class="title">
+          <i class="fas fa-pencil-alt"></i> 
+          <h2>Register here</h2>
+        </div>
+        <div class="info">
+          <input class="fname" type="text" name="name" placeholder="Full name">
+          <input type="text" name="name" placeholder="Employee ID">
+          <input type="text" name="name" placeholder="Phone number">
+          <input type="file" id="myfile" name="myfile">
+         <div class="modal-footer justify-content-center">
+        <a type="button" class="btn btn-primary waves-effect waves-light">Submit
+          <i class="fa fa-paper-plane ml-1"></i>
+        </a>
+        <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+      </div></div>
+      </form>
+    </div>
+    </div>
+          </div>
+        </div>
+        
+<!-- DELETE MODAL -->
+ <div class="modal fade right" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+    <div class="modal-content">
+         <div class="main-block">
+      <form action="/">
+        <div class="title">
+          <i class="fas fa-pencil-alt"></i> 
+          <h2>Delete here</h2>
+        </div>
+        <div class="info">
+          <input type="text" name="name" placeholder="Employee ID">
+         <div class="modal-footer justify-content-center">
+        <a type="button" class="btn btn-primary waves-effect waves-light">Submit
+          <i class="fa fa-paper-plane ml-1"></i>
+        </a>
+        <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+      </div></div>
+      </form>
+    </div>
+     </div>
+          </div>
+        </div>
+      <!--Footer-->
+
+
+<!-- UPDATE MODAL -->
+ <div class="modal fade right" id="updatemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+    <div class="modal-content">
+         <div class="main-block">
+      <form action="/">
+        <div class="title">
+          <i class="fas fa-pencil-alt"></i> 
+          <h2>Update here</h2>
+        </div>
+        <div class="info">
+          <input class="fname" type="text" name="name" placeholder="Full name">
+          <input type="text" name="name" placeholder="Employee ID">
+          <input type="text" name="name" placeholder="Phone number">
+          <input type="file" id="myfile" name="myfile">
+         <div class="modal-footer justify-content-center">
+        <a type="button" class="btn btn-primary waves-effect waves-light">Submit
+          <i class="fa fa-paper-plane ml-1"></i>
+        </a>
+        <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+      </div></div>
+      </form>
+    </div>
+      <!--Footer-->
+     
+    </div>
+
+          </div>
+         
+          <!-- partial -->
+        </div>
+
+
+
+
+
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="./vendors/chart.js/Chart.min.js"></script>
+    <script src="./vendors/moment/moment.min.js"></script>
+    <script src="./vendors/daterangepicker/daterangepicker.js"></script>
+    <script src="./vendors/chartist/chartist.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="./js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+  </body>
+</html>
